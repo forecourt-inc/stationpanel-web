@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #1b3a2f;
+  --color-forest-deep: #0f241c;
+  --color-sage: #6fbf8a;
+  --color-button: #5fa87a;
+  --color-button-hover: #6fbf8a;
+  --color-canvas: #f4f6f5;
+  --color-ink: #111827;
+  --color-muted: #6b7280;
+  --color-warning: #d4a017;
+  --color-overdue: #c45c4a;
+  --color-overdue-ink: #9f3f2e;
+  --color-clear: #2f7d4a;
+  --color-line: #e3e8e5;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-sage);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-sage) 40%, transparent);
+  }
+}
+
+@layer components {
+  /* The wash behind the login screen in the product. */
+  .forest-wash {
+    background:
+      radial-gradient(90% 120% at 85% 10%, #2c4f41 0%, transparent 60%),
+      radial-gradient(70% 90% at 10% 100%, #2a4a3d 0%, transparent 55%),
+      linear-gradient(160deg, #142d24 0%, var(--color-forest) 55%, #16302a 100%);
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 1rem;
+    box-shadow: 0 1px 2px rgb(17 24 39 / 0.04);
+  }
+
+  .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Text links on light backgrounds: sage underline, darker green text for contrast. */
+  .link {
+    color: var(--color-clear);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--color-sage);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  .link:hover {
+    color: var(--color-forest);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
