@@ -42,7 +42,7 @@ content/failures.ts   case cards on /failures, with source URLs
 content/field-notes.ts  field notes on /failures and in /feed.xml
 lib/                  FAQ matcher, chat system prompt, form validation, rate limiter
 public/screenshots/   product screenshots, cropped from reference/
-reference/            original screenshots, untouched
+reference/            original screenshots, untouched (dashboard.png is git-ignored and kept locally)
 ```
 
 Client-side JavaScript is limited to the chat widget and the demo form. Everything else is server-rendered and static.

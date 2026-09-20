@@ -11,3 +11,7 @@ next-env.d.ts
 
 # Demo requests saved to disk when RESEND_API_KEY is not set
 /data
+
+# Working files, not site files. Kept locally only.
+/STATIONPANEL-MARKETING-PROMPT.md
+/reference/dashboard.png
