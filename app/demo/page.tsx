@@ -6,7 +6,7 @@ import { demoPage } from "@/content/copy";
 
 export const metadata: Metadata = {
   title: "Demo",
-  description: demoPage.title,
+  description: demoPage.metaDescription,
   alternates: { canonical: "/demo" },
 };
 
@@ -23,7 +23,7 @@ export default function DemoPage() {
 
       <section className="border-y border-line bg-white py-16 sm:py-24">
         <Container>
-          <h2 className="text-3xl font-semibold">Shot list</h2>
+          <h2 className="text-3xl font-semibold">{demoPage.shotsTitle}</h2>
           <ol className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
             {demoPage.shots.map((shot, index) => (
               <li key={shot.title} className="border-t border-line pt-5">

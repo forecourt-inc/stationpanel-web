@@ -79,8 +79,8 @@ export const pullQuote = {
 
 export const demoBlock = {
   eyebrow: "Demo",
-  title: "See the fleet the way the app shows it.",
-  body: "Sign in, KPIs, needs attention, an overdue test, alarms. A short walk through the real product.",
+  title: "What you see when you sign in.",
+  body: "The dashboard. Counts across the top; below them, the sites that need attention and the next tests due or overdue across the fleet.",
   missing: "Screen recording coming. Request a walkthrough.",
   posterAlt:
     "A Station Panel fleet dashboard: active sites, active alarms, tests overdue, due in 60 days, a needs-attention list, and upcoming and overdue tests.",
@@ -89,15 +89,15 @@ export const demoBlock = {
 export const features = [
   {
     title: "Dashboard",
-    body: "Fleet-wide compliance at a glance. Active sites, active alarms, tests overdue, and what is due in 60 days.",
+    body: "Four numbers when you sign in: active sites, active alarms, tests overdue, and tests due in the next 60 days.",
   },
   {
     title: "Needs attention",
-    body: "Sites with active alarms or overdue testing, at the top. You know where to look this morning.",
+    body: "The sites with an active alarm or an overdue test, in one list. You know where to look this morning.",
   },
   {
     title: "Testing calendar",
-    body: "Line tightness. ATG functionality. Spill bucket integrity. Due dates by site, and days overdue when a test slips.",
+    body: "Tests like line tightness, ATG functionality, and spill bucket integrity, each with a due date by site and a count of days overdue when one slips.",
   },
   {
     title: "ATG alarms",
@@ -105,23 +105,23 @@ export const features = [
   },
   {
     title: "Documents",
-    body: "The site file in one place. Documents ready when DEC is in the building.",
+    body: "Each site’s records, kept with the site instead of in a binder somewhere else.",
   },
   {
     title: "Fleet view",
-    body: "Every site on one screen. Start the day with the whole fleet, not one binder.",
+    body: "All your sites under one login. Start the day with the whole fleet, not one binder.",
   },
 ] as const;
 
 export const failureStrip = {
   eyebrow: "Failures",
   title: "Compliance fails in the records room long before it fails in the soil.",
-  linkLabel: "Read the cases",
+  linkLabel: "Read the case",
 } as const;
 
 export const finalCta = {
-  title: "Don’t have those days.",
-  body: "Show us the fleet. We will show you the dashboard you open before the inspector does.",
+  title: "Show us the fleet.",
+  body: "We will show you the dashboard you open before the inspector does.",
 } as const;
 
 // --- Product ---------------------------------------------------------------
@@ -129,8 +129,9 @@ export const finalCta = {
 export const productPage = {
   eyebrow: "Product",
   title: "One place for sites, tests, documents, and ATG alarms.",
-  intro:
-    "This is the app as it is today. The screenshots on this page are the real product, not mockups.",
+  metaDescription:
+    "The Station Panel app, screen by screen: the dashboard, needs attention, upcoming and overdue tests, ATG alarms, documents, and settings.",
+  intro: "This is the app as it is today, screen by screen. The screenshots are taken from the product.",
   screenshotCaption: "A Station Panel fleet dashboard.",
   loginCaption: "Operators sign in at app.stationpanel.com.",
   loginAlt:
@@ -148,7 +149,7 @@ export const productPage = {
   },
   needsAttention: {
     title: "Needs attention",
-    body: "Sites with live alarms or overdue testing. Each site shows its counts: alarms, warnings, overdue tests.",
+    body: "Sites with active alarms or overdue testing. Each site shows its counts: alarms, warnings, overdue tests.",
   },
   tests: {
     title: "Upcoming & overdue tests",
@@ -175,7 +176,7 @@ export const productPage = {
     },
     {
       title: "Settings",
-      body: "Who can see which sites, who is an admin, and how the account is named. Keep it boring on purpose.",
+      body: "Who can see which sites, who is an admin, and how the account is named. It is boring on purpose.",
     },
   ],
   atgTitle: "About your ATG",
@@ -185,20 +186,23 @@ export const productPage = {
 
 export const demoPage = {
   eyebrow: "Demo",
-  title: "A short walk through the real product.",
+  title: "A short walk through the app.",
+  metaDescription:
+    "A short walk through Station Panel in five stops: sign in, the four dashboard numbers, needs attention, an overdue test, and ATG alarms.",
   intro: "Five stops. The same ones we walk on a live demo.",
+  shotsTitle: "The five stops",
   shots: [
     { title: "Sign in at app.stationpanel.com", body: "Email and password. The same screen your operators use." },
     {
-      title: "Dashboard KPIs",
+      title: "The four numbers",
       body: "Active sites, active alarms, tests overdue, due in 60 days.",
     },
     { title: "Needs attention", body: "Sites with active alarms or overdue testing." },
     { title: "An overdue test", body: "Which test, which site, how many days overdue." },
     { title: "Alarms", body: "ATG alarms and warnings, by site." },
   ],
-  formTitle: "Want it live, with your sites?",
-  formBody: "Tell us about the fleet. We’ll reply from hello@stationpanel.com.",
+  formTitle: "Rather see it live?",
+  formBody: "Tell us about the fleet and we will walk you through it.",
 } as const;
 
 // --- Request a demo --------------------------------------------------------
@@ -216,6 +220,8 @@ export const requestDemoPage = {
 export const aboutPage = {
   eyebrow: "About",
   title: "Forecourt Inc. builds Station Panel.",
+  metaDescription:
+    "Forecourt Inc. is a Delaware C-corporation working in New York. Station Panel is its first product. Read the founders’ letter.",
   company:
     "Forecourt Inc. is a Delaware C-corporation operating in New York State. Station Panel is our first product: an operator portal for fuel-site compliance, testing, and ATG alarms. We build for operators — the people who own the Tuesday inspection.",
   founders: [

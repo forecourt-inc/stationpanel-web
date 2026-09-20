@@ -6,7 +6,7 @@ import { atgLine, demoBlock, productPage } from "@/content/copy";
 
 export const metadata: Metadata = {
   title: "Product",
-  description: productPage.title,
+  description: productPage.metaDescription,
   alternates: { canonical: "/product" },
 };
 
@@ -32,7 +32,7 @@ export default function ProductPage() {
             <p className="mt-3 text-xl text-clear">“{dashboard.quote}”</p>
             <p className="mt-4 text-muted">{dashboard.body}</p>
           </div>
-          <ul className="grid grid-cols-2 gap-4" aria-label="Dashboard KPIs">
+          <ul className="grid grid-cols-2 gap-4" aria-label="The four dashboard numbers">
             {dashboard.kpis.map((kpi) => (
               <li key={kpi.label} className="card flex items-center gap-3 bg-canvas p-5">
                 <span className={`size-2.5 shrink-0 rounded-full ${kpiTone[kpi.tone]}`} aria-hidden="true" />

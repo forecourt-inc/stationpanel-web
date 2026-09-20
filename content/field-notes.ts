@@ -79,7 +79,7 @@ export const fieldNotes: FieldNote[] = [
     place: "New Jersey",
     headline: "Operators of 13 gas stations settle over leak detection, inspection, and recordkeeping",
     summary:
-      "Two companies that operate 13 gas stations in New Jersey settled with EPA. They had failed to comply with spill prevention, leak detection, inspection, and record keeping requirements for underground storage tanks between 2018 and 2020. They agreed to pay a penalty and certify compliance.",
+      "Two companies that operate 13 gas stations in New Jersey settled with EPA. EPA said they had failed to comply with spill prevention, leak detection, inspection, and record keeping requirements for underground storage tanks between 2018 and 2020. They agreed to pay a penalty and certify compliance.",
     impact: "$175,000 penalty. 13 stations.",
     sourceName: "U.S. EPA",
     sourceUrl:

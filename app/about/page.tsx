@@ -5,7 +5,7 @@ import { aboutPage } from "@/content/copy";
 
 export const metadata: Metadata = {
   title: "About",
-  description: aboutPage.company,
+  description: aboutPage.metaDescription,
   alternates: { canonical: "/about" },
 };
 

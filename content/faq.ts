@@ -30,7 +30,7 @@ export const faq: FaqItem[] = [
     id: "inspection-day",
     question: "What happens on inspection day?",
     answer:
-      "The inspector asks for records. With Station Panel the site file — documents, testing dates, alarms — is in one place, so you can open it before the inspector does. Nobody drives three hours to flip pages in a binder.",
+      "The inspector asks for records. With the site file in Station Panel — documents, testing dates, alarms — you open it where you are standing. Nobody has to drive three hours to flip pages in a binder.",
     keywords: ["inspection", "inspector", "inspection day", "dec", "binder", "tuesday", "audit", "records"],
     chip: true,
   },
@@ -52,7 +52,7 @@ export const faq: FaqItem[] = [
     id: "who",
     question: "Who is this for?",
     answer:
-      "Operators first. Small fleets. Municipal and commercial fueling yards. Anyone who owns the Tuesday inspection.",
+      "Fuel-site operators first. Then small fleets, and municipal and commercial fueling yards. Anyone who owns the Tuesday inspection.",
     keywords: ["who is it for", "who is this for", "for whom", "customers", "fleet", "fleets", "municipal", "commercial", "operator", "operators", "yard"],
     chip: true,
   },
@@ -60,7 +60,7 @@ export const faq: FaqItem[] = [
     id: "new-york",
     question: "Does it work in New York?",
     answer:
-      "Yes. Station Panel is built with NYS PBS inspections in mind. Records in one place before DEC is in the building.",
+      `Yes. Station Panel is built with NYS PBS inspections in mind. Records in one place before DEC is in the building. For sites in another state, ask us at ${site.email}.`,
     keywords: ["new york", "ny", "nys", "pbs", "petroleum bulk storage", "which states"],
   },
   {
@@ -73,7 +73,7 @@ export const faq: FaqItem[] = [
   {
     id: "demo",
     question: "How do I get a demo?",
-    answer: `Request one at ${site.url}/request-demo and we’ll reply from ${site.email}. Existing operators log in at app.stationpanel.com.`,
+    answer: `Request one at ${site.url}/request-demo and we’ll reply from ${site.email}. If you already have a login, it is at app.stationpanel.com.`,
     keywords: ["demo", "walkthrough", "trial", "see it", "live demo", "try", "log in", "login", "sign in"],
     chip: true,
   },
@@ -87,7 +87,7 @@ export const faq: FaqItem[] = [
     id: "company",
     question: "Who is behind Station Panel?",
     answer:
-      "Forecourt Inc., a Delaware C-corporation operating in New York State. Founded by Michael Bacher (Co-Founder & CEO) and Adam Siemaszko (Co-Founder & COO).",
+      "Forecourt Inc., a Delaware C-corporation that works in New York. The founders are Michael Bacher, CEO, and Adam Siemaszko, COO.",
     keywords: ["company", "forecourt", "founder", "founders", "who made", "who built", "behind", "team"],
   },
 ];

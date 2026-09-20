@@ -15,6 +15,9 @@ export type FailureCase = {
 
 export const failuresPage = {
   eyebrow: "Failures",
+  metaTitle: "Failures from the public record",
+  metaDescription:
+    "Four cases from the public record, then field notes: tank releases and enforcement actions where the record, the test, or the alarm was the problem.",
   title: "Compliance fails in the records room long before it fails in the soil.",
   intro:
     "Four cases from the public record. Then field notes: releases and enforcement actions where the record, the test, or the alarm was the problem.",
@@ -29,7 +32,7 @@ export const failureCases: FailureCase[] = [
     body: [
       "EPA counts 534,189 active petroleum underground storage tanks at approximately 190,224 facilities, as of March 2026.",
       "The technical compliance rate — release prevention and release detection together — was 60.9% for April 2025 through March 2026. In the six months from October 2025 through March 2026, states confirmed 1,997 new releases. 52,859 releases were still waiting to be cleaned up.",
-      "None of those numbers is about one bad operator. They describe the normal state of the fleet.",
+      "None of those numbers is about one bad operator. This is what normal looks like.",
     ],
     facts: [
       { label: "Active petroleum USTs", value: "534,189" },
@@ -52,7 +55,7 @@ export const failureCases: FailureCase[] = [
   {
     id: "walla-walla",
     kicker: "Walla Walla, Washington · 2023",
-    title: "Nearly 2,500 gallons, and alarms that did not trigger.",
+    title: "Nearly 2,500 gallons, and alarms the state says did not trigger.",
     body: [
       "A 40-year-old underground tank at a downtown gas station leaked nearly 2,500 gallons of gasoline to groundwater. On September 14, 2023, a hotel and parts of the downtown business district were evacuated. Gasoline and vapors were found in the hotel basement and in two nearby buildings.",
       "The Washington Department of Ecology said leak detection alarms failed to trigger, and that routine inventory checks showed fuel shortages that were not adequately followed up. Testing over about two and a half months did not confirm the release.",

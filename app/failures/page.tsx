@@ -4,8 +4,8 @@ import { failureCases, failuresPage } from "@/content/failures";
 import { fieldNotes, fieldNotesLabel } from "@/content/field-notes";
 
 export const metadata: Metadata = {
-  title: "Failures",
-  description: failuresPage.title,
+  title: failuresPage.metaTitle,
+  description: failuresPage.metaDescription,
   alternates: { canonical: "/failures" },
 };
 

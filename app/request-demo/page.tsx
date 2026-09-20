@@ -18,7 +18,7 @@ export default function RequestDemoPage() {
           <DemoForm />
           <aside className="space-y-8 lg:pt-4">
             <div>
-              <h2 className="text-lg font-semibold tracking-tight">Already an operator?</h2>
+              <h2 className="text-lg font-semibold tracking-tight">Already have a login?</h2>
               <p className="mt-2 text-muted">
                 Log in at{" "}
                 <a href={site.loginUrl} className="link">
