@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { DemoVideo } from "@/components/demo-video";
 import { PricingBlock } from "@/components/pricing-block";
@@ -103,7 +104,15 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="forest-wash py-20 text-white sm:py-28">
+      <section className="forest-wash relative isolate overflow-hidden py-20 text-white sm:py-28">
+        <Image
+          src="/photos/forecourt-pump.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="-z-20 object-cover object-[42%_88%] opacity-80 mix-blend-overlay grayscale"
+        />
+        <div className="absolute inset-0 -z-10 bg-linear-to-r from-forest/90 via-forest/55 to-forest/10" aria-hidden="true" />
         <Container>
           <figure className="mx-auto max-w-4xl">
             <blockquote className="text-3xl font-semibold leading-tight tracking-[-0.02em] sm:text-[2.6rem]">
