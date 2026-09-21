@@ -81,7 +81,6 @@ export const demoBlock = {
   eyebrow: "Demo",
   title: "What you see when you sign in.",
   body: "The dashboard. Counts across the top; below them, the sites that need attention and the next tests due or overdue across the fleet.",
-  missing: "Screen recording coming. Request a walkthrough.",
   posterAlt:
     "A Station Panel fleet dashboard: active sites, active alarms, tests overdue, due in 60 days, a needs-attention list, and upcoming and overdue tests.",
 } as const;
@@ -96,8 +95,8 @@ export const features = [
     body: "The sites with an active alarm or an overdue test, in one list. You know where to look this morning.",
   },
   {
-    title: "Testing calendar",
-    body: "Tests like line tightness, ATG functionality, and spill bucket integrity, each with a due date by site and a count of days overdue when one slips.",
+    title: "Testing schedule",
+    body: "Line and tank tightness, ATG functionality, spill buckets, sumps, overfill prevention, cathodic protection. Each test has a due date by site, and the next one counts from the last pass.",
   },
   {
     title: "ATG alarms",
@@ -105,13 +104,22 @@ export const features = [
   },
   {
     title: "Documents",
-    body: "Each site’s records, kept with the site instead of in a binder somewhere else.",
+    body: "Each site’s records, filed the way an inspector asks for them, from the registration certificate to the tightness tests. Kept with the site instead of in a binder somewhere else.",
   },
   {
     title: "Fleet view",
     body: "All your sites under one login. Start the day with the whole fleet, not one binder.",
   },
 ] as const;
+
+export const kioskBlock = {
+  eyebrow: "At the site",
+  title: "An iPad where the binder used to be.",
+  body: "A site can keep an iPad on the counter with its compliance records on it. When nobody is using it, the screen says whether the records are up to date. An inspector taps it and the records open.",
+  linkLabel: "See what is on the iPad",
+  idleAlt:
+    "The idle screen of the on-site iPad: a green check, “Environmental Compliance Records”, “Up to date”, and “Tap anywhere to view records”.",
+} as const;
 
 export const failureStrip = {
   eyebrow: "Failures",
@@ -141,10 +149,10 @@ export const productPage = {
     quote: "Fleet-wide compliance at a glance.",
     body: "Four numbers at the top of the screen. They are the first thing you see when you sign in.",
     kpis: [
-      { label: "Active sites", tone: "ink" },
-      { label: "Active alarms", tone: "overdue" },
-      { label: "Tests overdue", tone: "overdue" },
-      { label: "Due in 60 days", tone: "clear" },
+      { label: "Active sites" },
+      { label: "Active alarms" },
+      { label: "Tests overdue" },
+      { label: "Due in 60 days" },
     ],
   },
   needsAttention: {
@@ -153,22 +161,29 @@ export const productPage = {
   },
   tests: {
     title: "Upcoming & overdue tests",
-    body: "The next tests across the fleet, by site. When a test slips, the row says how many days overdue.",
+    body: "The next tests across the fleet, by site. When a test slips, the row says how many days overdue. These are the tests the app tracks, each on a one-year or three-year interval.",
     examples: [
-      "Line Tightness Test",
       "ATG Functionality Test",
+      "Cathodic Protection Survey",
+      "Containment Sump Test",
+      "CP Rectifier Inspection",
+      "Line Leak Detector Test",
+      "Line Tightness Test",
+      "Overfill Prevention Inspection",
       "Spill Bucket Integrity Test",
+      "Stage I Vapor Recovery Test",
+      "Tank Tightness Test",
     ],
   },
   sections: [
     { title: "Sites", body: "Every site in the fleet. Each one carries its own file." },
     {
       title: "Documents",
-      body: "The records an inspector asks for, kept with the site they belong to.",
+      body: "The records an inspector asks for, kept with the site they belong to. Filed by category: registration certificate, installation records, operator training, 10-day inventory monitoring, weekly leak detection, operability tests, cathodic protection, tightness tests, repairs and maintenance, financial responsibility, spill reporting, DEC inspections.",
     },
     {
       title: "Testing",
-      body: "The testing calendar. What is due, what is overdue, and by how many days.",
+      body: "The testing schedule. What is due, what is overdue, and by how many days.",
     },
     {
       title: "Alarms",
@@ -176,10 +191,53 @@ export const productPage = {
     },
     {
       title: "Settings",
-      body: "Who can see which sites, who is an admin, and how the account is named. It is boring on purpose.",
+      body: "Who is an admin, a manager, or a viewer, and how the account is named. Account activity is logged. It is boring on purpose.",
     },
   ],
   atgTitle: "About your ATG",
+  kiosk: {
+    title: "On the counter",
+    lead: "An iPad where the binder used to be.",
+    body: "A site can keep an iPad on the counter. It holds that site’s compliance records, and a connect code links it to the site’s file in the portal.",
+    idleCaption: "The iPad when nobody is using it.",
+    points: [
+      {
+        title: "The idle screen",
+        body: "It says whether the records are up to date. Tap anywhere and they open.",
+      },
+      {
+        title: "Twelve categories",
+        body: "The record set an NYS PBS inspection asks for, from the registration certificate to DEC inspections and correspondence.",
+      },
+      {
+        title: "Add a record from a phone",
+        body: "Scan the code on the iPad with a phone on the site’s Wi-Fi and photograph the page.",
+      },
+      {
+        title: "Remote view",
+        body: "If the site allows it, the office can see and control the screen. The iPad shows when someone is watching.",
+      },
+    ],
+    setupTitle: "Setup happens on the iPad.",
+    setupBody: "Five steps, starting with power and Wi-Fi. No laptop.",
+    setupSteps: [
+      {
+        shot: "setupPower",
+        caption: "1. Power",
+        alt: "Setup step one on the iPad: “Connect the iPad to Power”, with a diagram of the cable and outlet and a “Power connected” check.",
+      },
+      {
+        shot: "setupWifi",
+        caption: "2. Wi-Fi",
+        alt: "Setup step two on the iPad: “Connect to Wi-Fi”, with a “Connected to the network” check.",
+      },
+      {
+        shot: "setupAddress",
+        caption: "3. Facility address",
+        alt: "Setup step three on the iPad: “Enter the Facility Address”, with a search field.",
+      },
+    ],
+  },
 } as const;
 
 // --- Demo ------------------------------------------------------------------
@@ -188,7 +246,7 @@ export const demoPage = {
   eyebrow: "Demo",
   title: "A short walk through the app.",
   metaDescription:
-    "A short walk through Station Panel in five stops: sign in, the four dashboard numbers, needs attention, an overdue test, and ATG alarms.",
+    "A short walk through Station Panel in five stops: sign in, the four dashboard numbers, needs attention, a site file, and ATG alarms.",
   intro: "Five stops. The same ones we walk on a live demo.",
   shotsTitle: "The five stops",
   shots: [
@@ -198,7 +256,7 @@ export const demoPage = {
       body: "Active sites, active alarms, tests overdue, due in 60 days.",
     },
     { title: "Needs attention", body: "Sites with active alarms or overdue testing." },
-    { title: "An overdue test", body: "Which test, which site, how many days overdue." },
+    { title: "A site file", body: "One site: its tests and due dates, its test history, its alarms." },
     { title: "Alarms", body: "ATG alarms and warnings, by site." },
   ],
   formTitle: "Rather see it live?",
@@ -228,12 +286,10 @@ export const aboutPage = {
     {
       name: "Michael Bacher",
       role: "Co-Founder & CEO",
-      initials: "MB",
     },
     {
       name: "Adam Siemaszko",
       role: "Co-Founder & COO",
-      initials: "AS",
     },
   ],
 } as const;

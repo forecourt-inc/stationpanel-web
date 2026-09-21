@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { DemoNote, DemoVideo } from "@/components/demo-video";
 import { PricingBlock } from "@/components/pricing-block";
+import { DeviceShot } from "@/components/screenshot";
 import { Container, CtaPair, Eyebrow } from "@/components/ui";
-import { demoBlock, failureStrip, features, finalCta, hero, proofStrip, pullQuote } from "@/content/copy";
+import { demoBlock, failureStrip, features, finalCta, hero, kioskBlock, proofStrip, pullQuote } from "@/content/copy";
 import { failureCases } from "@/content/failures";
 
 export default function HomePage() {
@@ -101,6 +102,22 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+
+      <section className="border-t border-line bg-white py-20 sm:py-28">
+        <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <Eyebrow>{kioskBlock.eyebrow}</Eyebrow>
+            <h2 className="type-section mt-4">{kioskBlock.title}</h2>
+            <p className="mt-5 text-lg text-muted">{kioskBlock.body}</p>
+            <p className="mt-8">
+              <Link href="/product#ipad" className="link">
+                {kioskBlock.linkLabel}
+              </Link>
+            </p>
+          </div>
+          <DeviceShot shot="idle" alt={kioskBlock.idleAlt} />
         </Container>
       </section>
 

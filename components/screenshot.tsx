@@ -33,3 +33,30 @@ export function Screenshot({ shot, alt, caption, preload, sizes = "(min-width: 1
     </figure>
   );
 }
+
+const deviceShots = {
+  idle: { src: "/screenshots/ipad-idle.png", width: 1600, height: 1159 },
+  setupPower: { src: "/screenshots/ipad-setup-power.png", width: 1600, height: 1159 },
+  setupWifi: { src: "/screenshots/ipad-setup-wifi.png", width: 1600, height: 1159 },
+  setupAddress: { src: "/screenshots/ipad-setup-address.png", width: 1600, height: 1159 },
+} as const;
+
+type DeviceShotProps = {
+  shot: keyof typeof deviceShots;
+  alt: string;
+  caption?: string;
+  sizes?: string;
+};
+
+// Real capture from the on-site iPad in a plain tablet bezel.
+export function DeviceShot({ shot, alt, caption, sizes = "(min-width: 1024px) 520px, 100vw" }: DeviceShotProps) {
+  const { src, width, height } = deviceShots[shot];
+  return (
+    <figure>
+      <div className="rounded-[1.4rem] bg-ink p-[3.2%] shadow-[0_24px_60px_-24px_rgb(15_36_28/0.35)]">
+        <Image src={src} width={width} height={height} alt={alt} sizes={sizes} className="h-auto w-full rounded-lg" />
+      </div>
+      {caption ? <figcaption className="mt-3 text-center text-sm text-muted">{caption}</figcaption> : null}
+    </figure>
+  );
+}

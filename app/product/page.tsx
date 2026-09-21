@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { PricingBlock } from "@/components/pricing-block";
-import { Screenshot } from "@/components/screenshot";
+import { DeviceShot, Screenshot } from "@/components/screenshot";
 import { Container, PageHeader } from "@/components/ui";
-import { atgLine, demoBlock, productPage } from "@/content/copy";
+import { atgLine, demoBlock, kioskBlock, productPage } from "@/content/copy";
 
 export const metadata: Metadata = {
   title: "Product",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function ProductPage() {
-  const { dashboard, needsAttention, tests, sections } = productPage;
+  const { dashboard, needsAttention, tests, sections, kiosk } = productPage;
 
   return (
     <>
@@ -61,9 +61,9 @@ export default function ProductPage() {
           <article className="card p-7 sm:p-9">
             <h2 className="type-card">{tests.title}</h2>
             <p className="mt-3 text-muted">{tests.body}</p>
-            <ul className="mt-6 divide-y divide-line border-y border-line text-[0.95rem]">
+            <ul className="mt-6 grid gap-x-8 border-t border-line text-[0.95rem] sm:grid-cols-2">
               {tests.examples.map((example) => (
-                <li key={example} className="flex min-h-12 items-center">
+                <li key={example} className="flex min-h-12 items-center border-b border-line">
                   {example}
                 </li>
               ))}
@@ -86,7 +86,39 @@ export default function ProductPage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section id="ipad" className="scroll-mt-24 py-16 sm:py-24">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <h2 className="type-section">{kiosk.title}</h2>
+              <p className="mt-3 text-xl text-clear">{kiosk.lead}</p>
+              <p className="mt-4 text-muted">{kiosk.body}</p>
+            </div>
+            <DeviceShot shot="idle" alt={kioskBlock.idleAlt} caption={kiosk.idleCaption} />
+          </div>
+          <dl className="mt-14 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            {kiosk.points.map((point) => (
+              <div key={point.title} className="border-t border-line pt-5">
+                <dt className="type-item">{point.title}</dt>
+                <dd className="mt-2 text-muted">{point.body}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-16 max-w-2xl">
+            <h3 className="type-card">{kiosk.setupTitle}</h3>
+            <p className="mt-3 text-muted">{kiosk.setupBody}</p>
+          </div>
+          <ul className="mt-8 grid gap-8 sm:grid-cols-3">
+            {kiosk.setupSteps.map((step) => (
+              <li key={step.shot}>
+                <DeviceShot shot={step.shot} alt={step.alt} caption={step.caption} sizes="(min-width: 640px) 340px, 100vw" />
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      <section className="border-y border-line bg-white py-16 sm:py-24">
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <h2 className="type-section">{productPage.atgTitle}</h2>
@@ -101,7 +133,7 @@ export default function ProductPage() {
         </Container>
       </section>
 
-      <section className="pb-20 sm:pb-28">
+      <section className="pb-20 pt-16 sm:pb-28 sm:pt-24">
         <Container>
           <PricingBlock />
         </Container>

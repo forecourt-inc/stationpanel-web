@@ -41,7 +41,8 @@ content/faq.ts        FAQ pairs, widget chips, matcher keywords
 content/failures.ts   case cards on /failures, with source URLs
 content/field-notes.ts  field notes on /failures and in /feed.xml
 lib/                  FAQ matcher, chat system prompt, form validation, rate limiter
-public/screenshots/   product screenshots, cropped from reference/
+public/screenshots/   product screenshots, built by scripts/patch-shots.cjs
+scripts/              patch-shots.cjs: raw capture in, publishable screenshot out
 reference/            original screenshots, untouched (dashboard.png is git-ignored and kept locally)
 ```
 
@@ -74,7 +75,15 @@ Rules: public reporting only, never customer data. Link the primary source. No a
 
 ## Screenshots
 
-`public/screenshots/*.png` are crops of `reference/*.png`: browser chrome removed, the half-visible card at the bottom of the dashboard trimmed, the organization label under the sidebar wordmark covered with the adjacent sidebar color, and the signed-in user's name and role in the top bar covered with the bar's white. Re-crop from `reference/` if the product UI changes.
+`public/screenshots/*.png` are built from raw captures by `scripts/patch-shots.cjs`. The raw captures live in `reference/` (portal) and `WEB_PHOTOS/` (on-site iPad, git-ignored, local only).
+
+```sh
+node scripts/patch-shots.cjs                 # list the shots it knows
+node scripts/patch-shots.cjs ipad-idle       # rebuild one
+OUT_DIR=/tmp/shots node scripts/patch-shots.cjs dashboard   # dry run somewhere else
+```
+
+Portal captures: browser chrome removed, the half-visible card at the bottom of the dashboard trimmed, the organization label under the sidebar wordmark covered with the adjacent sidebar color, and the signed-in user’s name and role in the top bar covered with the bar’s white. iPad captures: the status bar cropped off, then resized. Never publish a capture that shows a person’s name, the organization label, a device PIN, the Settings page, a Wi-Fi name, a local address, or a live QR code. Add a new shot to the table in the script, then to the table in `components/screenshot.tsx`.
 
 ## Deploy to Vercel
 

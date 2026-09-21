@@ -22,7 +22,7 @@ export const faq: FaqItem[] = [
     id: "track",
     question: "What does Station Panel track?",
     answer:
-      "Sites, documents, testing due dates, overdue tests, and ATG alarms. The dashboard shows active sites, active alarms, tests overdue, and what is due in 60 days.",
+      "Sites, documents, testing due dates, overdue tests, and ATG alarms. Documents are filed by record category, from the registration certificate to DEC inspections. The dashboard shows active sites, active alarms, tests overdue, and what is due in 60 days.",
     keywords: ["track", "tracks", "features", "dashboard", "tests", "testing", "documents", "overdue", "kpi", "does it do"],
     chip: true,
   },
@@ -42,10 +42,17 @@ export const faq: FaqItem[] = [
     chip: true,
   },
   {
+    id: "ipad",
+    question: "Is there anything at the site itself?",
+    answer:
+      "There can be. A site can keep an iPad on the counter with its compliance records on it. The idle screen says whether the records are up to date, and anyone can tap it to open them.",
+    keywords: ["ipad", "tablet", "kiosk", "counter", "at the site", "in the store"],
+  },
+  {
     id: "replace-atg",
     question: "Will this replace my ATG?",
     answer:
-      "No. The gauge stays on the tank. Station Panel is where alarms and the testing calendar live next to the rest of the site file.",
+      "No. The gauge stays on the tank. Station Panel is where alarms and the testing schedule live next to the rest of the site file.",
     keywords: ["replace", "replacement", "instead of", "swap", "new gauge"],
   },
   {
