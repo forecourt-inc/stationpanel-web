@@ -15,3 +15,6 @@ next-env.d.ts
 # Working files, not site files. Kept locally only.
 /STATIONPANEL-MARKETING-PROMPT.md
 /reference/dashboard.png
+
+# Raw device and app captures. Only cleaned copies go into /public.
+/WEB_PHOTOS
