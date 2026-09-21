@@ -8,7 +8,8 @@
   --color-button-hover: #6fbf8a;
   --color-canvas: #f4f6f5;
   --color-ink: #111827;
-  --color-muted: #6b7280;
+  /* 5.25:1 on canvas, 5.7:1 on white. */
+  --color-muted: #5f6775;
   --color-warning: #d4a017;
   --color-overdue: #c45c4a;
   --color-overdue-ink: #9f3f2e;
@@ -21,7 +22,6 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
   }
 
@@ -58,6 +58,57 @@
 }
 
 @layer components {
+  /* One heading scale for the whole site. Phone size first, desktop from 40rem. */
+  .type-display,
+  .type-page,
+  .type-section,
+  .type-card,
+  .type-item {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .type-display {
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+  .type-page {
+    font-size: 2rem;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+  .type-section {
+    font-size: 1.625rem;
+    line-height: 1.15;
+  }
+  .type-card {
+    font-size: 1.375rem;
+    line-height: 1.2;
+  }
+  .type-item {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+  }
+  @media (min-width: 40rem) {
+    .type-display {
+      font-size: 4.5rem;
+    }
+    .type-page {
+      font-size: 3rem;
+      line-height: 1.05;
+    }
+    .type-section {
+      font-size: 2.125rem;
+    }
+    .type-card {
+      font-size: 1.5rem;
+    }
+    .type-item {
+      font-size: 1.25rem;
+    }
+  }
+
   /* The wash behind the login screen in the product. */
   .forest-wash {
     background:
@@ -95,9 +146,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
   *,
   *::before,
   *::after {

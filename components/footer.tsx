@@ -1,30 +1,27 @@
 import Link from "next/link";
 import { cta, nav, site } from "@/content/copy";
 import { Logo } from "./logo";
-import { ButtonLink, Container } from "./ui";
+import { Container } from "./ui";
+
+// Phone: every footer link is a 44px row. From 40rem up they tighten to a text list.
+const tapRows = "[&_a]:flex [&_a]:min-h-11 [&_a]:items-center sm:[&_a]:inline sm:[&_a]:min-h-0";
 
 export function Footer() {
   return (
     <footer className="bg-forest text-white">
-      <Container className="pb-24 pt-14">
+      <Container className="pb-20 pt-14 sm:pb-24">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <Link href="/" aria-label="Station Panel home">
+            <Link href="/" aria-label="Station Panel home" className="inline-flex min-h-11 items-center">
               <Logo tone="dark" />
             </Link>
             <p className="mt-4 text-[0.95rem] text-white/70">{site.tagline}.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <ButtonLink href={cta.demo.href}>{cta.demo.label}</ButtonLink>
-              <ButtonLink href={cta.login.href} variant="onDark">
-                {cta.login.label}
-              </ButtonLink>
-            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-10 text-[0.95rem] sm:gap-16">
+          <div className="grid grid-cols-[auto_auto] justify-start gap-x-10 text-[0.95rem] sm:gap-x-16">
             <nav aria-label="Footer">
-              <p className="label text-white/50">Site</p>
-              <ul className="mt-4 space-y-2.5 text-white/85">
+              <p className="label text-white/60">Site</p>
+              <ul className={`mt-4 text-white/85 sm:space-y-2.5 ${tapRows}`}>
                 {nav.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} className="hover:text-sage">
@@ -40,8 +37,8 @@ export function Footer() {
               </ul>
             </nav>
             <div>
-              <p className="label text-white/50">Contact</p>
-              <ul className="mt-4 space-y-2.5 text-white/85">
+              <p className="label text-white/60">Contact</p>
+              <ul className={`mt-4 text-white/85 sm:space-y-2.5 ${tapRows}`}>
                 <li>
                   <a href={`mailto:${site.email}`} className="text-sage hover:underline">
                     {site.email}
@@ -66,7 +63,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {site.legalEntity} Station Panel is a product of {site.legalEntity}
           </p>
-          <ul className="flex gap-5">
+          <ul className={`flex gap-5 ${tapRows}`}>
             <li>
               <Link href="/privacy" className="hover:text-sage">
                 Privacy

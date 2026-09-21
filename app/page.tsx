@@ -1,54 +1,54 @@
-import Image from "next/image";
 import Link from "next/link";
-import { DemoVideo } from "@/components/demo-video";
+import { DemoNote, DemoVideo } from "@/components/demo-video";
 import { PricingBlock } from "@/components/pricing-block";
 import { Container, CtaPair, Eyebrow } from "@/components/ui";
 import { demoBlock, failureStrip, features, finalCta, hero, proofStrip, pullQuote } from "@/content/copy";
 import { failureCases } from "@/content/failures";
-
-const proofDots = ["bg-sage", "bg-overdue", "bg-warning", "bg-clear"];
 
 export default function HomePage() {
   const homeCases = failureCases.filter((item) => item.onHome).slice(0, 3);
 
   return (
     <>
-      <section className="forest-wash text-white">
-        <Container className="pb-24 pt-16 sm:pb-32 sm:pt-24">
+      <section className="forest-wash relative isolate overflow-hidden text-white">
+        <Container className="pt-16 sm:pt-20">
           <Eyebrow tone="dark">{hero.eyebrow}</Eyebrow>
-          <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-[-0.035em] sm:text-7xl">{hero.headline}</h1>
+          <h1 className="type-display mt-5 max-w-4xl">{hero.headline}</h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl">{hero.subhead}</p>
           <div className="mt-9">
             <CtaPair tone="dark" />
           </div>
+          <div className="relative mt-14 pb-10 sm:mt-16 sm:pb-14">
+            {/* The canvas comes back a third of the way down, so the product sits across the edge of the forest. */}
+            <div className="absolute -inset-x-[100vw] bottom-0 top-1/3 -z-10 bg-canvas" aria-hidden="true" />
+            <DemoVideo note={false} preload />
+          </div>
         </Container>
       </section>
 
-      <section aria-label="What you see" className="-mt-12 sm:-mt-14">
+      <section className="pb-20 sm:pb-28">
         <Container>
-          <ul className="card grid divide-y divide-line sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4">
-            {proofStrip.map((item, index) => (
+          <ul aria-label="What you see" className="card grid divide-y divide-line sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4">
+            {proofStrip.map((item) => (
               <li
                 key={item}
                 className="flex items-start gap-3 px-6 py-5 text-[0.95rem] font-medium leading-snug lg:border-l lg:border-line lg:first:border-l-0"
               >
-                <span className={`mt-1.5 size-2 shrink-0 rounded-full ${proofDots[index]}`} aria-hidden="true" />
+                <span className="mt-1.5 size-2 shrink-0 rounded-full bg-sage" aria-hidden="true" />
                 {item}
               </li>
             ))}
           </ul>
-        </Container>
-      </section>
 
-      <section className="py-20 sm:py-28">
-        <Container>
-          <div className="max-w-2xl">
-            <Eyebrow>{demoBlock.eyebrow}</Eyebrow>
-            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{demoBlock.title}</h2>
-            <p className="mt-4 text-lg text-muted">{demoBlock.body}</p>
-          </div>
-          <div className="mt-10">
-            <DemoVideo />
+          <div className="mt-16 grid gap-x-16 gap-y-5 sm:mt-20 lg:grid-cols-[1fr_1.15fr] lg:items-end">
+            <div>
+              <Eyebrow>{demoBlock.eyebrow}</Eyebrow>
+              <h2 className="type-section mt-4">{demoBlock.title}</h2>
+            </div>
+            <div>
+              <p className="text-lg text-muted">{demoBlock.body}</p>
+              <DemoNote className="mt-3" />
+            </div>
           </div>
         </Container>
       </section>
@@ -57,7 +57,7 @@ export default function HomePage() {
         <Container>
           <div className="max-w-2xl">
             <Eyebrow>Product</Eyebrow>
-            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">What is in the panel.</h2>
+            <h2 className="type-section mt-4">What is in the panel.</h2>
           </div>
           <ul className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
@@ -65,7 +65,7 @@ export default function HomePage() {
                 <p className="font-mono text-xs text-muted" aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-2 text-xl font-semibold">{feature.title}</h3>
+                <h3 className="type-item mt-2">{feature.title}</h3>
                 <p className="mt-2 text-muted">{feature.body}</p>
               </li>
             ))}
@@ -82,7 +82,7 @@ export default function HomePage() {
         <Container>
           <div className="max-w-3xl">
             <Eyebrow>{failureStrip.eyebrow}</Eyebrow>
-            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{failureStrip.title}</h2>
+            <h2 className="type-section mt-4">{failureStrip.title}</h2>
           </div>
           <ul className="mt-12 grid gap-5 lg:grid-cols-3">
             {homeCases.map((item) => (
@@ -92,7 +92,7 @@ export default function HomePage() {
                   className="card group flex h-full flex-col p-7 transition-colors hover:border-sage"
                 >
                   <p className="label text-muted">{item.kicker}</p>
-                  <h3 className="mt-3 text-xl font-semibold">{item.title}</h3>
+                  <h3 className="type-item mt-3">{item.title}</h3>
                   <p className="mt-3 flex-1 text-muted">{item.teaser}</p>
                   <p className="mt-6 text-[0.95rem] font-medium text-clear group-hover:text-forest">
                     {failureStrip.linkLabel} <span aria-hidden="true">→</span>
@@ -104,15 +104,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="forest-wash relative isolate overflow-hidden py-20 text-white sm:py-28">
-        <Image
-          src="/photos/forecourt-pump.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="-z-20 object-cover object-[42%_88%] opacity-80 mix-blend-overlay grayscale"
-        />
-        <div className="absolute inset-0 -z-10 bg-linear-to-r from-forest/90 via-forest/55 to-forest/10" aria-hidden="true" />
+      <section className="forest-wash py-20 text-white sm:py-28">
         <Container>
           <figure className="mx-auto max-w-4xl">
             <blockquote className="text-3xl font-semibold leading-tight tracking-[-0.02em] sm:text-[2.6rem]">
@@ -130,9 +122,9 @@ export default function HomePage() {
 
       <section className="py-20 sm:py-28">
         <Container className="space-y-14">
-          <PricingBlock />
+          <PricingBlock cta={false} />
           <div className="text-center">
-            <h2 className="text-4xl font-semibold tracking-[-0.03em] sm:text-5xl">{finalCta.title}</h2>
+            <h2 className="type-page">{finalCta.title}</h2>
             <p className="mx-auto mt-5 max-w-xl text-lg text-muted">{finalCta.body}</p>
             <div className="mt-8 flex justify-center">
               <CtaPair tone="light" />

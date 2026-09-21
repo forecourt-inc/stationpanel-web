@@ -23,14 +23,14 @@ export default function DemoPage() {
 
       <section className="border-y border-line bg-white py-16 sm:py-24">
         <Container>
-          <h2 className="text-3xl font-semibold">{demoPage.shotsTitle}</h2>
+          <h2 className="type-section">{demoPage.shotsTitle}</h2>
           <ol className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
             {demoPage.shots.map((shot, index) => (
               <li key={shot.title} className="border-t border-line pt-5">
                 <p className="font-mono text-sm text-clear" aria-hidden="true">
                   {index + 1}
                 </p>
-                <h3 className="mt-2 text-lg font-semibold tracking-tight">{shot.title}</h3>
+                <h3 className="type-item mt-2">{shot.title}</h3>
                 <p className="mt-2 text-[0.95rem] text-muted">{shot.body}</p>
               </li>
             ))}
@@ -41,7 +41,7 @@ export default function DemoPage() {
       <section className="py-16 sm:py-24">
         <Container className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">
           <div>
-            <h2 className="text-3xl font-semibold">{demoPage.formTitle}</h2>
+            <h2 className="type-section">{demoPage.formTitle}</h2>
             <p className="mt-4 text-lg text-muted">{demoPage.formBody}</p>
           </div>
           <DemoForm />

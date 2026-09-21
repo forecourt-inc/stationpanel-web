@@ -18,7 +18,7 @@ export default function RequestDemoPage() {
           <DemoForm />
           <aside className="space-y-8 lg:pt-4">
             <div>
-              <h2 className="text-lg font-semibold tracking-tight">Already have a login?</h2>
+              <h2 className="type-item">Already have a login?</h2>
               <p className="mt-2 text-muted">
                 Log in at{" "}
                 <a href={site.loginUrl} className="link">
@@ -28,11 +28,11 @@ export default function RequestDemoPage() {
               </p>
             </div>
             <div>
-              <h2 className="text-lg font-semibold tracking-tight">About your ATG</h2>
+              <h2 className="type-item">About your ATG</h2>
               <p className="mt-2 text-muted">{atgLine}</p>
             </div>
             <div>
-              <h2 className="text-lg font-semibold tracking-tight">Rather write?</h2>
+              <h2 className="type-item">Rather write?</h2>
               <p className="mt-2 text-muted">
                 <a href={`mailto:${site.email}`} className="link">
                   {site.email}

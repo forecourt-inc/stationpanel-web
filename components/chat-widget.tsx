@@ -100,12 +100,13 @@ export function ChatWidget() {
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
         aria-expanded={open}
-        className={`fixed bottom-5 right-5 z-50 items-center gap-2 rounded-full bg-forest px-5 py-3.5 text-[0.95rem] font-semibold text-white shadow-lg shadow-forest-deep/30 ring-1 ring-white/15 transition-colors hover:bg-forest-deep ${open ? "hidden" : "inline-flex"}`}
+        className={`fixed bottom-4 right-4 z-50 size-12 items-center justify-center gap-2 rounded-full bg-forest text-[0.95rem] font-semibold text-white shadow-md shadow-forest-deep/20 ring-1 ring-white/15 transition-colors hover:bg-forest-deep sm:bottom-5 sm:right-5 sm:size-auto sm:px-5 sm:py-3.5 ${open ? "hidden" : "inline-flex"}`}
       >
-        <svg viewBox="0 0 20 20" className="size-4 fill-sage" aria-hidden="true">
+        <svg viewBox="0 0 20 20" className="size-5 fill-sage sm:size-4" aria-hidden="true">
           <path d="M10 2c4.4 0 8 3 8 6.8s-3.6 6.8-8 6.8c-.7 0-1.4-.1-2-.2L4 17.5l.8-3.3C3.1 13 2 11 2 8.8 2 5 5.6 2 10 2Z" />
         </svg>
-        Ask Station Panel
+        {/* Phone: the mark alone, so the button never sits on the copy. The words stay for screen readers. */}
+        <span className="sr-only sm:not-sr-only">Ask Station Panel</span>
       </button>
 
       {open ? (

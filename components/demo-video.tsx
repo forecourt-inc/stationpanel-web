@@ -7,7 +7,21 @@ import { Screenshot } from "./screenshot";
 // Drop a recording at public/demo.mp4 and rebuild: the player replaces the poster.
 const hasVideo = existsSync(path.join(process.cwd(), "public", "demo.mp4"));
 
-export function DemoVideo() {
+// The line under the poster while there is no recording. Nothing once there is one.
+export function DemoNote({ className = "" }: { className?: string }) {
+  if (hasVideo) return null;
+  return (
+    <p className={`text-[0.95rem] text-muted ${className}`}>
+      Screen recording coming.{" "}
+      <Link href="/request-demo" className="link">
+        Request a walkthrough.
+      </Link>
+    </p>
+  );
+}
+
+// `note={false}` leaves the caption line out, for pages that set <DemoNote /> somewhere else.
+export function DemoVideo({ note = true, preload }: { note?: boolean; preload?: boolean }) {
   if (hasVideo) {
     return (
       <figure>
@@ -22,20 +36,15 @@ export function DemoVideo() {
           <source src="/demo.mp4" type="video/mp4" />
           Your browser cannot play this video. <a href="/demo.mp4">Download the recording</a>.
         </video>
-        <figcaption className="mt-3 text-center text-sm text-muted">{productPage.screenshotCaption}</figcaption>
+        {note ? <figcaption className="mt-3 text-center text-sm text-muted">{productPage.screenshotCaption}</figcaption> : null}
       </figure>
     );
   }
 
   return (
     <div>
-      <Screenshot shot="dashboard" alt={demoBlock.posterAlt} />
-      <p className="mt-4 text-center text-[0.95rem] text-muted">
-        Screen recording coming.{" "}
-        <Link href="/request-demo" className="link">
-          Request a walkthrough.
-        </Link>
-      </p>
+      <Screenshot shot="dashboard" alt={demoBlock.posterAlt} preload={preload} />
+      {note ? <DemoNote className="mt-4 text-center" /> : null}
     </div>
   );
 }

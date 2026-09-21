@@ -45,8 +45,8 @@ export function DemoForm() {
 
   if (status === "sent") {
     return (
-      <div className="card p-8 sm:p-10" role="status" aria-live="polite">
-        <h2 className="text-2xl font-semibold">Got it.</h2>
+      <div className="card self-start p-8 sm:p-10" role="status" aria-live="polite">
+        <h2 className="type-card">Got it.</h2>
         <p className="mt-3 text-lg">{requestDemoPage.confirmation}</p>
       </div>
     );
@@ -103,7 +103,7 @@ export function DemoForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center justify-center rounded-lg bg-button px-6 py-3 text-[0.95rem] font-semibold text-forest-deep transition-colors hover:bg-button-hover disabled:opacity-60"
+          className="inline-flex min-h-11 items-center justify-center rounded-lg bg-button px-6 py-3 text-[0.95rem] font-semibold text-forest-deep transition-colors hover:bg-button-hover disabled:opacity-60"
         >
           {status === "sending" ? "Sending…" : "Request a demo"}
         </button>

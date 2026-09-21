@@ -9,12 +9,12 @@ type ScreenshotProps = {
   shot: keyof typeof shots;
   alt: string;
   caption?: string;
-  priority?: boolean;
+  preload?: boolean;
   sizes?: string;
 };
 
 // Real product screenshot in a plain browser frame.
-export function Screenshot({ shot, alt, caption, priority, sizes = "(min-width: 1152px) 1088px, 100vw" }: ScreenshotProps) {
+export function Screenshot({ shot, alt, caption, preload, sizes = "(min-width: 1152px) 1088px, 100vw" }: ScreenshotProps) {
   const { src, width, height, url } = shots[shot];
   return (
     <figure>
@@ -27,7 +27,7 @@ export function Screenshot({ shot, alt, caption, priority, sizes = "(min-width: 
           </span>
           <span className="truncate rounded-md bg-white px-3 py-0.5 text-xs text-muted">{url}</span>
         </div>
-        <Image src={src} width={width} height={height} alt={alt} priority={priority} sizes={sizes} className="h-auto w-full" />
+        <Image src={src} width={width} height={height} alt={alt} preload={preload} sizes={sizes} className="h-auto w-full" />
       </div>
       {caption ? <figcaption className="mt-3 text-center text-sm text-muted">{caption}</figcaption> : null}
     </figure>

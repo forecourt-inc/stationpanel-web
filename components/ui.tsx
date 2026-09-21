@@ -18,7 +18,7 @@ type ButtonProps = {
 };
 
 const buttonBase =
-  "inline-flex items-center justify-center rounded-lg px-5 py-3 text-[0.95rem] font-semibold leading-none transition-colors";
+  "inline-flex min-h-11 items-center justify-center rounded-lg px-5 py-3 text-[0.95rem] font-semibold leading-none transition-colors";
 
 const buttonVariants = {
   // Dark text on the product's button green: white on #5FA87A does not meet contrast.
@@ -59,8 +59,8 @@ export function PageHeader({ eyebrow, title, intro }: { eyebrow: string; title: 
     <header className="forest-wash text-white">
       <Container className="py-16 sm:py-24">
         <Eyebrow tone="dark">{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-3xl text-4xl font-semibold sm:text-5xl">{title}</h1>
-        {intro ? <p className="mt-6 max-w-2xl text-lg text-white/80">{intro}</p> : null}
+        <h1 className="type-page mt-4 max-w-3xl">{title}</h1>
+        {intro ? <p className="mt-6 max-w-xl text-lg text-white/80">{intro}</p> : null}
       </Container>
     </header>
   );

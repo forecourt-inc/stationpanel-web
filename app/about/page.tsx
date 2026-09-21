@@ -20,31 +20,20 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-y border-line bg-white py-16 sm:py-24">
+      <section className="border-t border-line bg-white py-16 sm:py-24">
         <Container>
-          <h2 className="text-3xl font-semibold">Founders</h2>
-          <ul className="mt-10 grid gap-5 sm:grid-cols-2">
+          <h2 className="type-section">Founders</h2>
+          <ul className="mt-8 grid gap-x-10 sm:grid-cols-2">
             {aboutPage.founders.map((founder) => (
-              <li key={founder.name} className="card flex items-center gap-5 bg-canvas p-6">
-                <span
-                  className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-forest text-lg font-semibold text-sage"
-                  aria-hidden="true"
-                >
-                  {founder.initials}
-                </span>
-                <div>
-                  <h3 className="text-xl font-semibold">{founder.name}</h3>
-                  <p className="text-muted">{founder.role}</p>
-                </div>
+              <li key={founder.name} className="border-b border-line py-5 first:border-t sm:[&:nth-child(2)]:border-t">
+                <h3 className="type-item">{founder.name}</h3>
+                <p className="text-muted">{founder.role}</p>
               </li>
             ))}
           </ul>
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-24">
-        <Container className="flex justify-center">
-          <CtaPair tone="light" />
+          <div className="mt-10">
+            <CtaPair tone="light" />
+          </div>
         </Container>
       </section>
     </>
