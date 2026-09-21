@@ -54,7 +54,7 @@ export function DeviceShot({ shot, alt, caption, sizes = "(min-width: 1024px) 52
   return (
     <figure>
       <div className="rounded-[1.4rem] bg-ink p-[3.2%] shadow-[0_24px_60px_-24px_rgb(15_36_28/0.35)]">
-        <Image src={src} width={width} height={height} alt={alt} sizes={sizes} className="h-auto w-full rounded-lg" />
+        <Image src={src} width={width} height={height} alt={alt} sizes={sizes} className="h-auto w-full rounded-lg bg-white" />
       </div>
       {caption ? <figcaption className="mt-3 text-center text-sm text-muted">{caption}</figcaption> : null}
     </figure>
