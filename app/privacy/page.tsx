@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Privacy notice" updated="September 20, 2026">
+    <LegalPage title="Privacy notice" updated="October 1, 2026">
       <section>
         <h2>Who we are</h2>
         <p>
@@ -29,6 +29,10 @@ export default function PrivacyPage() {
           <li>Questions you type into the “Ask Station Panel” widget.</li>
           <li>Standard server logs, such as IP address, browser, and pages requested.</li>
         </ul>
+      </section>
+      <section>
+        <h2>Cookies</h2>
+        <p>This site does not set cookies and does not run analytics or advertising trackers.</p>
       </section>
       <section>
         <h2>What we do with it</h2>

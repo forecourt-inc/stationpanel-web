@@ -1,7 +1,27 @@
 import Link from "next/link";
-import { cta, nav, site } from "@/content/copy";
+import { cta, site } from "@/content/copy";
 import { Logo } from "./logo";
 import { Container } from "./ui";
+
+const footerSite = [
+  { label: "Product", href: "/product" },
+  { label: "On the record", href: "/record" },
+  { label: "Demo", href: "/demo" },
+  { label: "Contact", href: "/contact" },
+];
+
+const footerCompany = [
+  { label: "About", href: "/about" },
+  { label: "Careers", href: "/careers" },
+  { label: "Press", href: "/press" },
+];
+
+const footerLegal = [
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+  { label: "Accessibility", href: "/accessibility" },
+  { label: "Security", href: "/security" },
+];
 
 // Phone: every footer link is a 44px row. From 40rem up they tighten to a text list.
 const tapRows = "[&_a]:flex [&_a]:min-h-11 [&_a]:items-center sm:[&_a]:inline sm:[&_a]:min-h-0";
@@ -18,11 +38,11 @@ export function Footer() {
             <p className="mt-4 text-[0.95rem] text-white/70">{site.tagline}.</p>
           </div>
 
-          <div className="grid grid-cols-[auto_auto] justify-start gap-x-10 text-[0.95rem] sm:gap-x-16">
+          <div className="grid grid-cols-2 justify-start gap-x-10 gap-y-10 text-[0.95rem] sm:grid-cols-[auto_auto_auto] sm:gap-x-16">
             <nav aria-label="Footer">
               <p className="label text-white/60">Site</p>
               <ul className={`mt-4 text-white/85 sm:space-y-2.5 ${tapRows}`}>
-                {nav.map((item) => (
+                {footerSite.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} className="hover:text-sage">
                       {item.label}
@@ -31,7 +51,19 @@ export function Footer() {
                 ))}
               </ul>
             </nav>
-            <div>
+            <nav aria-label="Company">
+              <p className="label text-white/60">Company</p>
+              <ul className={`mt-4 text-white/85 sm:space-y-2.5 ${tapRows}`}>
+                {footerCompany.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="hover:text-sage">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div className="col-span-2 sm:col-span-1">
               <p className="label text-white/60">Contact</p>
               <ul className={`mt-4 text-white/85 sm:space-y-2.5 ${tapRows}`}>
                 <li>
@@ -58,17 +90,14 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {site.legalEntity} Station Panel is a product of {site.legalEntity}
           </p>
-          <ul className={`flex gap-5 ${tapRows}`}>
-            <li>
-              <Link href="/privacy" className="hover:text-sage">
-                Privacy
-              </Link>
-            </li>
-            <li>
-              <Link href="/terms" className="hover:text-sage">
-                Terms
-              </Link>
-            </li>
+          <ul className={`flex flex-wrap gap-x-5 ${tapRows}`}>
+            {footerLegal.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="hover:text-sage">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </Container>

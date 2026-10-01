@@ -85,6 +85,10 @@ OUT_DIR=/tmp/shots node scripts/patch-shots.cjs dashboard   # dry run somewhere 
 
 Portal captures: browser chrome removed, the half-visible card at the bottom of the dashboard trimmed, the organization label under the sidebar wordmark covered with the adjacent sidebar color, and the signed-in user’s name and role in the top bar covered with the bar’s white. iPad captures: the status bar cropped off, then resized. Never publish a capture that shows a person’s name, the organization label, a device PIN, the Settings page, a Wi-Fi name, a local address, or a live QR code. Add a new shot to the table in the script, then to the table in `components/screenshot.tsx`.
 
+## security.txt
+
+`public/.well-known/security.txt` has an `Expires` date (RFC 9116). Move it forward, to less than a year out, before it passes: 2027-09-30.
+
 ## Deploy to Vercel
 
 1. Push this repo to GitHub and import it in Vercel. The framework preset is detected; no build settings to change.

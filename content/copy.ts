@@ -294,3 +294,23 @@ export const aboutPage = {
     },
   ],
 } as const;
+
+// --- Press and careers -----------------------------------------------------
+
+export const pressPage = {
+  eyebrow: "Press",
+  title: "For reporters and newsletters.",
+  metaDescription: "Press contact, company boilerplate, and founders for Station Panel by Forecourt Inc.",
+  intro: "Write to us and a founder will answer.",
+  boilerplateTitle: "About Forecourt Inc.",
+} as const;
+
+export const careersPage = {
+  eyebrow: "Careers",
+  title: "Always accepting applications.",
+  metaDescription: "Work on Station Panel at Forecourt Inc. No roles are posted; we read every application.",
+  intro:
+    "No roles are posted right now. We still want to hear from people who know fuel sites, compliance, or the software that keeps them in order.",
+  howTitle: "How to apply",
+  how: "Write to us with what you do, where you are, and a link to your work or a résumé. We read every one.",
+} as const;
