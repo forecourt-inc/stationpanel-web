@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import { DemoForm } from "@/components/demo-form";
 import { Container, PageHeader } from "@/components/ui";
-import { atgLine, requestDemoPage, site } from "@/content/copy";
+import { atgLine, contactPage, site } from "@/content/copy";
 
 export const metadata: Metadata = {
-  title: "Request a demo",
-  description: requestDemoPage.intro,
-  alternates: { canonical: "/request-demo" },
+  title: "Contact",
+  description: contactPage.intro,
+  alternates: { canonical: "/contact" },
 };
 
-export default function RequestDemoPage() {
+export default function ContactPage() {
   return (
     <>
-      <PageHeader eyebrow={requestDemoPage.eyebrow} title={requestDemoPage.title} intro={requestDemoPage.intro} />
+      <PageHeader eyebrow={contactPage.eyebrow} title={contactPage.title} intro={contactPage.intro} />
       <section className="py-16 sm:py-24">
         <Container className="grid gap-10 lg:grid-cols-[1.5fr_1fr]">
           <DemoForm />

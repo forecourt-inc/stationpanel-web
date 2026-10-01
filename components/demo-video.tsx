@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
 import Link from "next/link";
-import { demoBlock, productPage } from "@/content/copy";
+import { cta, demoBlock, productPage } from "@/content/copy";
 import { Screenshot } from "./screenshot";
 
 // Drop a recording at public/demo.mp4 and rebuild: the player replaces the poster.
@@ -13,8 +13,8 @@ export function DemoNote({ className = "" }: { className?: string }) {
   return (
     <p className={`text-[0.95rem] text-muted ${className}`}>
       Screen recording coming.{" "}
-      <Link href="/request-demo" className="link">
-        Request a walkthrough.
+      <Link href={cta.demo.href} className="link">
+        {cta.demo.label}.
       </Link>
     </p>
   );

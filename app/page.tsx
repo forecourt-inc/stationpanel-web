@@ -49,6 +49,11 @@ export default function HomePage() {
             <div>
               <p className="text-lg text-muted">{demoBlock.body}</p>
               <DemoNote className="mt-3" />
+              <p className="mt-3">
+                <Link href="/demo" className="link">
+                  {demoBlock.linkLabel}
+                </Link>
+              </p>
             </div>
           </div>
         </Container>

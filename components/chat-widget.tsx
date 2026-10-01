@@ -6,7 +6,7 @@ import { site } from "@/content/copy";
 
 type Turn = { role: "user" | "assistant"; content: string };
 
-const LINKS = /(https:\/\/stationpanel\.com\/request-demo|hello@stationpanel\.com|app\.stationpanel\.com)/g;
+const LINKS = /(https:\/\/stationpanel\.com\/contact|hello@stationpanel\.com|app\.stationpanel\.com)/g;
 
 function linkify(text: string): ReactNode[] {
   return text.split(LINKS).map((part, index) => {
@@ -16,10 +16,10 @@ function linkify(text: string): ReactNode[] {
           {part}
         </a>
       );
-    if (part === "https://stationpanel.com/request-demo")
+    if (part === "https://stationpanel.com/contact")
       return (
-        <a key={index} href="/request-demo" className="link">
-          stationpanel.com/request-demo
+        <a key={index} href="/contact" className="link">
+          stationpanel.com/contact
         </a>
       );
     if (part === "app.stationpanel.com")

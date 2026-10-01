@@ -9,7 +9,7 @@ Subhead: A DEC inspector walks in on a Tuesday. The PBS binder is at another sit
 Fleet-wide compliance at a glance · Active alarms · Overdue tests · Documents ready when DEC is in the building
 
 ## Pricing placeholder
-Monthly software + a one-time setup. Hardware only if the site needs a connection we do not already have. We price the fleet after we see the sites. Request a demo and we will send a number that matches your count.
+Monthly software + a one-time setup. Hardware only if the site needs a connection we do not already have. We price the fleet after we see the sites. See a demo and we will send a number that matches your count.
 
 ## ATG line (do not overclaim)
 Station Panel is built around ATG alarms and the testing calendar those gauges sit inside. The gauge stays on the tank. Tell us what is on site — we will tell you what we support.

@@ -50,7 +50,7 @@ Client-side JavaScript is limited to the chat widget and the demo form. Everythi
 
 ## Drop in the demo video
 
-Save the screen recording as `public/demo.mp4` and rebuild. The home page and `/demo` check for that file at build time: if it exists they show the player with the dashboard screenshot as the poster; if not, they show the screenshot and “Screen recording coming. Request a walkthrough.”
+Save the screen recording as `public/demo.mp4` and rebuild. The home page and `/demo` check for that file at build time: if it exists they show the player with the dashboard screenshot as the poster; if not, they show the screenshot and “Screen recording coming. See a demo.”
 
 Keep it small (H.264, 1080p, a few MB). The shot list is on `/demo`.
 

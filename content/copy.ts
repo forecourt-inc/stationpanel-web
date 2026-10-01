@@ -15,14 +15,14 @@ export const site = {
 
 export const nav = [
   { label: "Product", href: "/product" },
-  { label: "Demo", href: "/demo" },
   { label: "Failures", href: "/failures" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const cta = {
   login: { label: "Log in", href: site.loginUrl },
-  demo: { label: "Request a demo", href: "/request-demo" },
+  demo: { label: "See a demo", href: "/contact" },
 } as const;
 
 // --- Locked copy -----------------------------------------------------------
@@ -43,7 +43,7 @@ export const proofStrip = [
 
 export const pricing = {
   label: "Pricing.",
-  body: "Monthly software + a one-time setup. Hardware only if the site needs a connection we do not already have. We price the fleet after we see the sites. Request a demo and we will send a number that matches your count.",
+  body: "Monthly software + a one-time setup. Hardware only if the site needs a connection we do not already have. We price the fleet after we see the sites. See a demo and we will send a number that matches your count.",
 } as const;
 
 export const atgLine =
@@ -81,6 +81,7 @@ export const demoBlock = {
   eyebrow: "Demo",
   title: "What you see when you sign in.",
   body: "The dashboard. Counts across the top; below them, the sites that need attention and the next tests due or overdue across the fleet.",
+  linkLabel: "Walk through the five stops",
   posterAlt:
     "A Station Panel fleet dashboard: active sites, active alarms, tests overdue, due in 60 days, a needs-attention list, and upcoming and overdue tests.",
 } as const;
@@ -263,10 +264,10 @@ export const demoPage = {
   formBody: "Tell us about the fleet and we will walk you through it.",
 } as const;
 
-// --- Request a demo --------------------------------------------------------
+// --- Contact ---------------------------------------------------------------
 
-export const requestDemoPage = {
-  eyebrow: "Request a demo",
+export const contactPage = {
+  eyebrow: "Contact",
   title: "Show us the fleet.",
   intro:
     "Tell us how many sites and where. We will walk you through the dashboard and send a number that matches your count.",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState, type FormEvent } from "react";
-import { requestDemoPage, site } from "@/content/copy";
+import { contactPage, site } from "@/content/copy";
 import { demoFields, type DemoRequest } from "@/lib/demo-request";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -47,7 +47,7 @@ export function DemoForm() {
     return (
       <div className="card self-start p-8 sm:p-10" role="status" aria-live="polite">
         <h2 className="type-card">Got it.</h2>
-        <p className="mt-3 text-lg">{requestDemoPage.confirmation}</p>
+        <p className="mt-3 text-lg">{contactPage.confirmation}</p>
       </div>
     );
   }
@@ -105,9 +105,9 @@ export function DemoForm() {
           disabled={status === "sending"}
           className="inline-flex min-h-11 items-center justify-center rounded-lg bg-button px-6 py-3 text-[0.95rem] font-semibold text-forest-deep transition-colors hover:bg-button-hover disabled:opacity-60"
         >
-          {status === "sending" ? "Sending…" : "Request a demo"}
+          {status === "sending" ? "Sending…" : "Send"}
         </button>
-        <p className="text-sm text-muted">{requestDemoPage.confirmation}</p>
+        <p className="text-sm text-muted">{contactPage.confirmation}</p>
       </div>
 
       <p role="alert" aria-live="assertive" className="mt-4 text-[0.95rem] text-overdue-ink empty:hidden">

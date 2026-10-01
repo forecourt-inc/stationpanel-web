@@ -29,11 +29,6 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
-                <li>
-                  <Link href={cta.demo.href} className="hover:text-sage">
-                    {cta.demo.label}
-                  </Link>
-                </li>
               </ul>
             </nav>
             <div>

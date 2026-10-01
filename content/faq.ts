@@ -80,7 +80,7 @@ export const faq: FaqItem[] = [
   {
     id: "demo",
     question: "How do I get a demo?",
-    answer: `Request one at ${site.url}/request-demo and we’ll reply from ${site.email}. If you already have a login, it is at app.stationpanel.com.`,
+    answer: `Ask for one at ${site.url}/contact and we’ll reply from ${site.email}. If you already have a login, it is at app.stationpanel.com.`,
     keywords: ["demo", "walkthrough", "trial", "see it", "live demo", "try", "log in", "login", "sign in"],
     chip: true,
   },
@@ -101,4 +101,4 @@ export const faq: FaqItem[] = [
 
 export const chips = faq.filter((item) => item.chip).map((item) => item.question);
 
-export const fallbackAnswer = `I don’t have a good answer for that. Request a demo at ${site.url}/request-demo or write to ${site.email}.`;
+export const fallbackAnswer = `I don’t have a good answer for that. See a demo at ${site.url}/contact or write to ${site.email}.`;
