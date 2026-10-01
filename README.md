@@ -22,12 +22,12 @@ Everything works with none of these set.
 
 | Variable | What it does | If unset |
 | --- | --- | --- |
-| `RESEND_API_KEY` | Emails demo requests through [Resend](https://resend.com). | Requests are appended to `data/demo-requests.jsonl` and logged. |
+| `RESEND_API_KEY` | Emails demo requests through [Resend](https://resend.com). | In development, requests are appended to `data/demo-requests.jsonl` and logged. In production, the visitor sees “We could not send that. Please write to hello@…” and the request is only in the logs. |
 | `DEMO_TO_EMAIL` | Where demo requests go. Use `hello@stationpanel.com`. | Defaults to `hello@stationpanel.com`. |
 | `DEMO_FROM_EMAIL` | The From line. The domain must be verified in Resend. | `Station Panel <hello@stationpanel.com>` |
 | `ANTHROPIC_API_KEY` | The “Ask Station Panel” widget answers with Claude Haiku, limited to `content/faq.ts` and site copy. | The widget keyword-matches the FAQ. |
 
-On Vercel, set `RESEND_API_KEY`. The filesystem there is temporary, so the disk fallback only lands in the function's temp dir and the logs.
+On Vercel, set `RESEND_API_KEY`, `DEMO_FROM_EMAIL` (on a domain verified in Resend) and `DEMO_TO_EMAIL`, then send one test request. Without a working send, the contact form shows the visitor an error instead of “Got it”.
 
 If Resend or the Claude API fails at runtime, the routes fall back the same way: save-and-log for demo requests, FAQ matching for chat.
 

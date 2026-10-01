@@ -1,5 +1,4 @@
 import { appendFile, mkdir } from "node:fs/promises";
-import { tmpdir } from "node:os";
 import path from "node:path";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
@@ -13,21 +12,20 @@ function formatEmail(data: DemoRequest): string {
   return demoFields.map((field) => `${field.label}: ${data[field.name] || "—"}`).join("\n");
 }
 
-// No email provider (or it failed): keep the request on disk and in the logs.
-// Serverless filesystems are read-only outside the temp dir, so fall back to it.
+// No email provider (or it failed), in development only: keep the request in ./data.
+// In production nothing on the server's disk lasts (a serverless temp dir is wiped),
+// so a failed send must reach the visitor as an error, never as "Got it".
 async function saveToDisk(record: object): Promise<string | null> {
-  const line = `${JSON.stringify(record)}\n`;
-  for (const dir of [path.join(process.cwd(), "data"), path.join(tmpdir(), "stationpanel")]) {
-    try {
-      await mkdir(dir, { recursive: true });
-      const file = path.join(dir, "demo-requests.jsonl");
-      await appendFile(file, line, "utf8");
-      return file;
-    } catch {
-      // try the next location
-    }
+  if (process.env.NODE_ENV === "production") return null;
+  try {
+    const dir = path.join(process.cwd(), "data");
+    await mkdir(dir, { recursive: true });
+    const file = path.join(dir, "demo-requests.jsonl");
+    await appendFile(file, `${JSON.stringify(record)}\n`, "utf8");
+    return file;
+  } catch {
+    return null;
   }
-  return null;
 }
 
 export async function POST(request: Request) {
@@ -77,7 +75,7 @@ export async function POST(request: Request) {
   const file = await saveToDisk(record);
   console.log(`[demo-request] ${file ? `saved to ${file}` : "COULD NOT SAVE"}:`, JSON.stringify(record));
   if (!file) {
-    // The request is in the logs, but do not let the visitor rely on that.
+    // The request is in the runtime logs, but do not let the visitor rely on that.
     return NextResponse.json(
       { error: `We could not send that. Please write to ${site.email}.` },
       { status: 500 },
