@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { FoundersLetter } from "@/components/founders-letter";
 import { Container, CtaPair, PageHeader } from "@/components/ui";
 import { aboutPage } from "@/content/copy";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About",
   description: aboutPage.metaDescription,
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

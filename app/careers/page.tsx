@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
 import { careersPage, site } from "@/content/copy";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Careers",
   description: careersPage.metaDescription,
-  alternates: { canonical: "/careers" },
-};
+  path: "/careers",
+});
 
 export default function CareersPage() {
   return (

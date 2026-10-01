@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Container, CtaPair, PageHeader } from "@/components/ui";
 import { failureCases, failuresPage } from "@/content/failures";
 import { fieldNotes, fieldNotesLabel } from "@/content/field-notes";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: failuresPage.metaTitle,
   description: failuresPage.metaDescription,
-  alternates: { canonical: "/record" },
-};
+  path: "/record",
+});
 
 export default function RecordPage() {
   const notes = [...fieldNotes].sort((a, b) => b.date.localeCompare(a.date));

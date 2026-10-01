@@ -35,6 +35,17 @@ export const metadata: Metadata = {
   },
 };
 
+// Who publishes the site, for search engines and assistants. Only facts already on the site.
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: site.legalEntity,
+  url: site.url,
+  email: site.email,
+  brand: { "@type": "Brand", name: site.name },
+  description: site.description,
+};
+
 export const viewport: Viewport = {
   themeColor: "#1B3A2F",
 };
@@ -55,6 +66,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main>
         <Footer />
         <ChatWidget />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c") }}
+        />
       </body>
     </html>
   );

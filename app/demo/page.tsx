@@ -3,12 +3,13 @@ import { DemoForm } from "@/components/demo-form";
 import { DemoVideo } from "@/components/demo-video";
 import { Container, PageHeader } from "@/components/ui";
 import { demoPage } from "@/content/copy";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Demo",
   description: demoPage.metaDescription,
-  alternates: { canonical: "/demo" },
-};
+  path: "/demo",
+});
 
 export default function DemoPage() {
   return (

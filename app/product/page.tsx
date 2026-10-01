@@ -3,12 +3,13 @@ import { PricingBlock } from "@/components/pricing-block";
 import { DeviceShot, Screenshot } from "@/components/screenshot";
 import { Container, PageHeader } from "@/components/ui";
 import { atgLine, demoBlock, kioskBlock, productPage } from "@/content/copy";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Product",
   description: productPage.metaDescription,
-  alternates: { canonical: "/product" },
-};
+  path: "/product",
+});
 
 export default function ProductPage() {
   const { dashboard, needsAttention, tests, sections, kiosk } = productPage;

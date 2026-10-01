@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { DemoForm } from "@/components/demo-form";
 import { Container, PageHeader } from "@/components/ui";
 import { atgLine, contactPage, site } from "@/content/copy";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description: contactPage.intro,
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

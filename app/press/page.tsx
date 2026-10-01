@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
 import { aboutPage, pressPage, site } from "@/content/copy";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Press",
   description: pressPage.metaDescription,
-  alternates: { canonical: "/press" },
-};
+  path: "/press",
+});
 
 export default function PressPage() {
   return (

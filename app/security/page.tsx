@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal";
 import { site } from "@/content/copy";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Security",
   description: "How to report a security issue in stationpanel.com or the Station Panel app.",
-  alternates: { canonical: "/security" },
-};
+  path: "/security",
+});
 
 export default function SecurityPage() {
   return (
