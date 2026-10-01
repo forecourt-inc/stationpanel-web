@@ -4,7 +4,7 @@ import { site } from "@/content/copy";
 
 export const metadata: Metadata = {
   title: "Security",
-  description: "How to report a security issue in stationpanel.com or the Station Panel app. Draft for counsel.",
+  description: "How to report a security issue in stationpanel.com or the Station Panel app.",
   alternates: { canonical: "/security" },
 };
 
@@ -40,10 +40,10 @@ export default function SecurityPage() {
           <li>Do not degrade the service for others, and do not use social engineering or physical access.</li>
           <li>Give us a reasonable time to fix the issue before you share it.</li>
         </ul>
+        {/* Counsel to confirm this safe-harbor language. */}
         <p>
           We will reply, keep you updated while we work on it, and tell you when it is fixed. We will not pursue
-          action against anyone who reports in good faith and follows these requests.{" "}
-          <em>Counsel to confirm this safe-harbor language.</em>
+          action against anyone who reports in good faith and follows these requests.
         </p>
       </section>
     </LegalPage>

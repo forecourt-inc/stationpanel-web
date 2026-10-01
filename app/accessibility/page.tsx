@@ -4,7 +4,7 @@ import { site } from "@/content/copy";
 
 export const metadata: Metadata = {
   title: "Accessibility",
-  description: "Accessibility statement for stationpanel.com. Draft for counsel.",
+  description: "Accessibility statement for stationpanel.com.",
   alternates: { canonical: "/accessibility" },
 };
 

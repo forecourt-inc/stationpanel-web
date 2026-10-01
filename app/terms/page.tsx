@@ -4,7 +4,7 @@ import { site } from "@/content/copy";
 
 export const metadata: Metadata = {
   title: "Terms",
-  description: "Terms of use for stationpanel.com. Draft for counsel.",
+  description: "Terms of use for stationpanel.com.",
   alternates: { canonical: "/terms" },
 };
 
@@ -52,9 +52,10 @@ export default function TermsPage() {
       </section>
       <section>
         <h2>Governing law</h2>
+        {/* Counsel to confirm choice of law and venue. */}
         <p>
           These terms are governed by the laws of the State of New York, without regard to conflict-of-law rules.
-          Courts located in New York State have exclusive jurisdiction. <em>Counsel to confirm choice of law and venue.</em>
+          Courts located in New York State have exclusive jurisdiction.
         </p>
       </section>
       <section>
