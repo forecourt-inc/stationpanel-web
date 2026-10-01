@@ -35,7 +35,7 @@ If Resend or the Claude API fails at runtime, the routes fall back the same way:
 
 ```
 app/                  pages, /api/chat, /api/demo-request, /feed.xml, OG image, favicon (icon.svg)
-components/           header, footer, logo, demo form, chat widget, screenshot frame
+components/           header, footer, logo, contact form, chat widget, screenshot frame
 content/copy.ts       all page copy. Hero, pricing, ATG line, and founders' letter are locked (STATIONPANEL-COPY.md)
 content/faq.ts        FAQ pairs, widget chips, matcher keywords
 content/failures.ts   case cards on /record, with source URLs
@@ -46,7 +46,7 @@ scripts/              patch-shots.cjs: raw capture in, publishable screenshot ou
 reference/            original screenshots, untouched (dashboard.png is git-ignored and kept locally)
 ```
 
-Client-side JavaScript is limited to the chat widget and the demo form. Everything else is server-rendered and static.
+Client-side JavaScript is limited to the chat widget and the contact form. Everything else is server-rendered and static.
 
 ## Drop in the demo video
 

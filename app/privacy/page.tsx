@@ -4,7 +4,7 @@ import { site } from "@/content/copy";
 
 export const metadata: Metadata = {
   title: "Privacy",
-  description: "Privacy notice for stationpanel.com. Draft for counsel.",
+  description: "Privacy notice for stationpanel.com.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -23,7 +23,7 @@ export default function PrivacyPage() {
         <h2>What we collect here</h2>
         <ul>
           <li>
-            What you send us in the demo form: name, email, company, role, number of sites, city and state, phone,
+            What you send us in the contact form: name, email, company, role, number of sites, city and state, phone,
             notes, and how you heard about us.
           </li>
           <li>Questions you type into the “Ask Station Panel” widget.</li>

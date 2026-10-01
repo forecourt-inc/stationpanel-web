@@ -5,6 +5,7 @@ import { faq } from "@/content/faq";
 export const dynamic = "force-static";
 
 // llms.txt (llmstxt.org): a plain map of the site for assistants and agents. Built from content/ so it never drifts.
+// Free text goes above the first H2; every H2 section is a list of links.
 export function GET() {
   const faqLines = faq.map((item) => `- ${item.question} ${item.answer}`).join("\n");
 
@@ -18,6 +19,12 @@ ATG: ${atgLine}
 
 Pricing: ${pricing.body}
 
+Contact: ${site.email}
+
+Questions operators ask:
+
+${faqLines}
+
 ## Pages
 
 - [Product](${site.url}/product): ${productPage.metaDescription}
@@ -29,14 +36,6 @@ Pricing: ${pricing.body}
 ## Feeds
 
 - [Field notes (RSS)](${site.url}/feed.xml): Public reports on tank releases and enforcement actions, curated. Not ${site.name} customer data.
-
-## FAQ
-
-${faqLines}
-
-## Contact
-
-${site.email}
 `;
 
   return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
