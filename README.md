@@ -62,7 +62,7 @@ Add an object to the array in `content/field-notes.ts`:
 {
   id: "2026-05-state-short-slug",     // unique; used as the anchor and the RSS guid. No town.
   date: "2026-05-14",                 // ISO date of the public report (RSS only; not shown on the page)
-  operator: "Owner of two stations · Washington", // size and state from the source; no names, no towns
+  operator: "Two stations · Washington", // size and state from the source; no names, no towns
   headline: "Plain, factual headline, no operator name",
   summary: "Two or three sentences. Only what the source says.",
   impact: "Gallons, penalty, number of sites — as the source states it.",
