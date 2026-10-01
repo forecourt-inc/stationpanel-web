@@ -1,4 +1,4 @@
-// Case cards on /failures (and the three-card strip on the home page).
+// Case cards on /record (and the three-card strip on the home page).
 // Every figure here comes from the linked public source. Do not round up, and do not add adjectives.
 
 export type FailureCase = {
@@ -14,8 +14,8 @@ export type FailureCase = {
 };
 
 export const failuresPage = {
-  eyebrow: "Failures",
-  metaTitle: "Failures from the public record",
+  eyebrow: "On the record",
+  metaTitle: "On the record: tank releases and enforcement cases",
   metaDescription:
     "Four cases from the public record, then field notes: tank releases and enforcement actions where the record, the test, or the alarm was the problem.",
   title: "Compliance fails in the records room long before it fails in the soil.",

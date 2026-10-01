@@ -6,12 +6,12 @@ import { fieldNotes, fieldNotesLabel } from "@/content/field-notes";
 export const metadata: Metadata = {
   title: failuresPage.metaTitle,
   description: failuresPage.metaDescription,
-  alternates: { canonical: "/failures" },
+  alternates: { canonical: "/record" },
 };
 
 const dateFormat = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 
-export default function FailuresPage() {
+export default function RecordPage() {
   const notes = [...fieldNotes].sort((a, b) => b.date.localeCompare(a.date));
 
   return (

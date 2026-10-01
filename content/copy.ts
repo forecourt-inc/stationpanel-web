@@ -15,7 +15,7 @@ export const site = {
 
 export const nav = [
   { label: "Product", href: "/product" },
-  { label: "Failures", href: "/failures" },
+  { label: "On the record", href: "/record" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
@@ -123,7 +123,7 @@ export const kioskBlock = {
 } as const;
 
 export const failureStrip = {
-  eyebrow: "Failures",
+  eyebrow: "On the record",
   title: "Compliance fails in the records room long before it fails in the soil.",
   linkLabel: "Read the case",
 } as const;

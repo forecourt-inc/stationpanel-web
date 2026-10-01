@@ -38,8 +38,8 @@ app/                  pages, /api/chat, /api/demo-request, /feed.xml, OG image, 
 components/           header, footer, logo, demo form, chat widget, screenshot frame
 content/copy.ts       all page copy. Hero, pricing, ATG line, and founders' letter are locked (STATIONPANEL-COPY.md)
 content/faq.ts        FAQ pairs, widget chips, matcher keywords
-content/failures.ts   case cards on /failures, with source URLs
-content/field-notes.ts  field notes on /failures and in /feed.xml
+content/failures.ts   case cards on /record, with source URLs
+content/field-notes.ts  field notes on /record and in /feed.xml
 lib/                  FAQ matcher, chat system prompt, form validation, rate limiter
 public/screenshots/   product screenshots, built by scripts/patch-shots.cjs
 scripts/              patch-shots.cjs: raw capture in, publishable screenshot out

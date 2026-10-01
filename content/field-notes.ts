@@ -1,8 +1,8 @@
-// Field notes on /failures and in /feed.xml.
+// Field notes on /record and in /feed.xml.
 // Public reporting only. Summaries say only what the linked source says. See README: "Add a field note".
 
 export type FieldNote = {
-  id: string; // unique; anchor on /failures and guid in /feed.xml
+  id: string; // unique; anchor on /record and guid in /feed.xml
   date: string; // ISO date of the public report
   place: string;
   headline: string;

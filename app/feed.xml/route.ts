@@ -16,6 +16,7 @@ export function GET() {
   const notes = [...fieldNotes].sort((a, b) => b.date.localeCompare(a.date));
   const items = notes
     .map((note) => {
+      // The guid keeps the old /failures path on purpose: a new guid would show every item to subscribers again.
       const description = `${note.place}. ${note.summary} Impact: ${note.impact} Source: ${note.sourceName}.`;
       return `    <item>
       <title>${escapeXml(note.headline)}</title>
@@ -30,8 +31,8 @@ export function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Station Panel — Field notes</title>
-    <link>${site.url}/failures</link>
+    <title>Station Panel — On the record</title>
+    <link>${site.url}/record</link>
     <atom:link href="${site.url}/feed.xml" rel="self" type="application/rss+xml" />
     <description>${escapeXml(fieldNotesLabel)}</description>
     <language>en-us</language>

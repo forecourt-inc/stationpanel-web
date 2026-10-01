@@ -94,7 +94,7 @@ export default function HomePage() {
             {homeCases.map((item) => (
               <li key={item.id}>
                 <Link
-                  href={`/failures#${item.id}`}
+                  href={`/record#${item.id}`}
                   className="card group flex h-full flex-col p-7 transition-colors hover:border-sage"
                 >
                   <p className="label text-muted">{item.kicker}</p>
