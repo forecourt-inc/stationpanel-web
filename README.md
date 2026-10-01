@@ -60,10 +60,10 @@ Add an object to the array in `content/field-notes.ts`:
 
 ```ts
 {
-  id: "2026-05-town-st-short-slug",   // unique; used as the anchor and the RSS guid
-  date: "2026-05-14",                 // ISO date of the public report
-  place: "Town, ST",
-  headline: "Plain, factual headline",
+  id: "2026-05-state-short-slug",     // unique; used as the anchor and the RSS guid. No town.
+  date: "2026-05-14",                 // ISO date of the public report (RSS only; not shown on the page)
+  operator: "Owner of two stations · Washington", // size and state from the source; no names, no towns
+  headline: "Plain, factual headline, no operator name",
   summary: "Two or three sentences. Only what the source says.",
   impact: "Gallons, penalty, number of sites — as the source states it.",
   sourceName: "Agency or publication",

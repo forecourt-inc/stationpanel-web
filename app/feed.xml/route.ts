@@ -16,12 +16,11 @@ export function GET() {
   const notes = [...fieldNotes].sort((a, b) => b.date.localeCompare(a.date));
   const items = notes
     .map((note) => {
-      // The guid keeps the old /failures path on purpose: a new guid would show every item to subscribers again.
-      const description = `${note.place}. ${note.summary} Impact: ${note.impact} Source: ${note.sourceName}.`;
+      const description = `${note.operator}. ${note.summary} Impact: ${note.impact} Source: ${note.sourceName}.`;
       return `    <item>
       <title>${escapeXml(note.headline)}</title>
       <link>${escapeXml(note.sourceUrl)}</link>
-      <guid isPermaLink="false">${escapeXml(`${site.url}/failures#${note.id}`)}</guid>
+      <guid isPermaLink="false">${escapeXml(`${site.url}/record#${note.id}`)}</guid>
       <pubDate>${new Date(`${note.date}T12:00:00Z`).toUTCString()}</pubDate>
       <description>${escapeXml(description)}</description>
     </item>`;

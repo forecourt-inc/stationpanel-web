@@ -9,8 +9,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/record" },
 };
 
-const dateFormat = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
-
 export default function RecordPage() {
   const notes = [...fieldNotes].sort((a, b) => b.date.localeCompare(a.date));
 
@@ -70,11 +68,8 @@ export default function RecordPage() {
           <ol className="mt-12 divide-y divide-line border-y border-line">
             {notes.map((note) => (
               <li key={note.id} id={note.id} className="scroll-mt-28 grid gap-x-10 gap-y-2 py-8 md:grid-cols-[13rem_1fr]">
-                <p className="text-[0.95rem] text-muted">
-                  <time dateTime={note.date}>{dateFormat.format(new Date(`${note.date}T00:00:00Z`))}</time>
-                  <br />
-                  {note.place}
-                </p>
+                {/* No date on purpose: an old incident date reads like an old post. */}
+                <p className="text-[0.95rem] text-muted">{note.operator}</p>
                 <div className="max-w-xl">
                   <h3 className="type-item">{note.headline}</h3>
                   <p className="mt-2">{note.summary}</p>

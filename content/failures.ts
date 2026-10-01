@@ -1,5 +1,6 @@
 // Case cards on /record (and the three-card strip on the home page).
 // Every figure here comes from the linked public source. Do not round up, and do not add adjectives.
+// No operator names, no towns where an operator would be identifiable, and no year in the kicker.
 
 export type FailureCase = {
   id: string;
@@ -53,8 +54,8 @@ export const failureCases: FailureCase[] = [
     onHome: true,
   },
   {
-    id: "walla-walla",
-    kicker: "Walla Walla, Washington · 2023",
+    id: "groundwater-release",
+    kicker: "One downtown station · Washington",
     title: "Nearly 2,500 gallons, and alarms the state says did not trigger.",
     body: [
       "A 40-year-old underground tank at a downtown gas station leaked nearly 2,500 gallons of gasoline to groundwater. On September 14, 2023, a hotel and parts of the downtown business district were evacuated. Gasoline and vapors were found in the hotel basement and in two nearby buildings.",
@@ -83,7 +84,7 @@ export const failureCases: FailureCase[] = [
   },
   {
     id: "charnock",
-    kicker: "Santa Monica, California · 1996",
+    kicker: "Santa Monica, California · city wellfields",
     title: "Leaking tanks took out about half a city’s drinking water.",
     body: [
       "In 1996, Santa Monica learned that two of its drinking-water wellfields, Charnock and Arcadia, were contaminated with MTBE, a gasoline additive. Levels at Charnock ran as high as 610 parts per billion.",
