@@ -29,6 +29,8 @@ Everything works with none of these set.
 
 On Vercel, set `RESEND_API_KEY`, `DEMO_FROM_EMAIL` (on a domain verified in Resend) and `DEMO_TO_EMAIL`, then send one test request. Without a working send, the contact form shows the visitor an error instead of “Got it”.
 
+Page views are counted with Vercel Web Analytics (`<Analytics />` in `app/layout.tsx`; no cookies). Turn it on in the Vercel project under Analytics, or the script request returns 404 and nothing is counted. If the analytics setup changes, update the Cookies section of the privacy notice in the same commit.
+
 If Resend or the Claude API fails at runtime, the routes fall back the same way: save-and-log for demo requests, FAQ matching for chat.
 
 ## Where things live
@@ -46,7 +48,7 @@ scripts/              patch-shots.cjs: raw capture in, publishable screenshot ou
 reference/            original screenshots, untouched (dashboard.png is git-ignored and kept locally)
 ```
 
-Client-side JavaScript is limited to the chat widget and the contact form. Everything else is server-rendered and static.
+Client-side JavaScript is limited to the chat widget, the contact form, and the page-view counter. Everything else is server-rendered and static.
 
 ## Drop in the demo video
 

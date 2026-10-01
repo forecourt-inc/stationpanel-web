@@ -29,11 +29,16 @@ export default function PrivacyPage() {
           </li>
           <li>Questions you type into the “Ask Station Panel” widget.</li>
           <li>Standard server logs, such as IP address, browser, and pages requested.</li>
+          <li>Page views and the site that sent you here, counted without cookies.</li>
         </ul>
       </section>
       <section>
         <h2>Cookies</h2>
-        <p>This site does not set cookies and does not run analytics or advertising trackers.</p>
+        <p>
+          This site does not set cookies and does not run advertising trackers. It counts page views with a
+          cookieless analytics service that does not identify individual visitors: each visit is grouped by a hash
+          of the request that resets every day.
+        </p>
       </section>
       <section>
         <h2>What we do with it</h2>
