@@ -8,7 +8,7 @@ type Status = "idle" | "sending" | "sent" | "error";
 type FieldErrors = Partial<Record<keyof DemoRequest, string>>;
 
 const inputClass =
-  "mt-1.5 block w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-base text-ink placeholder:text-muted/70 focus:border-sage focus:outline-none focus:ring-2 focus:ring-sage/40 aria-[invalid=true]:border-overdue";
+  "mt-1.5 block w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-base text-ink placeholder:text-muted focus:border-sage focus:outline-none focus:ring-2 focus:ring-sage/40 aria-[invalid=true]:border-overdue";
 
 export function DemoForm() {
   const formId = useId();
