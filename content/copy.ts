@@ -270,8 +270,24 @@ export const contactPage = {
   eyebrow: "Contact",
   title: "Show us the fleet.",
   intro:
-    "Tell us how many sites and where. We will walk you through the dashboard and send a number that matches your count.",
+    "Tell us where the site is and how to reach you. We will walk you through the dashboard and send a number that matches your count.",
+  steps: {
+    where: "Where is the site?",
+    reach: "How should we reach you?",
+    details: "Anything else?",
+  },
+  noAddress: "Don’t have one yet",
+  haveAddress: "I have an address",
+  contactLabel: "Email or phone",
+  consent: "We’ll use this to reach you about Station Panel: an email, or a call from one of us. No automated texts.",
+  timeLabel: "Best time to reach you",
+  daysLabel: "Which days",
+  next: "Next",
+  addDetails: "Add details",
   confirmation: "We’ll reply from hello@stationpanel.com.",
+  confirmationPhone: "One of us will call you.",
+  confirmationPhoneTimed: "One of us will call you at the time you picked.",
+  mapCaption: "Albany, New York",
 } as const;
 
 // --- About -----------------------------------------------------------------

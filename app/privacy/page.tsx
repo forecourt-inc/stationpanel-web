@@ -24,8 +24,9 @@ export default function PrivacyPage() {
         <h2>What we collect here</h2>
         <ul>
           <li>
-            What you send us in the contact form: name, email, company, role, number of sites, city and state, phone,
-            notes, and how you heard about us.
+            What you send us in the contact form: a site address (or the nearest town or cross streets), an email
+            address or phone number, the best time to reach you, and, if you add them, your name, company, number of
+            sites, notes, and how you heard about us.
           </li>
           <li>Questions you type into the “Ask Station Panel” widget.</li>
           <li>Standard server logs, such as IP address, browser, and pages requested.</li>
@@ -43,7 +44,8 @@ export default function PrivacyPage() {
       <section>
         <h2>What we do with it</h2>
         <p>
-          We use it to answer you, schedule a demo, price a fleet, and keep the site running. We do not sell it. This
+          We use it to answer you, by email or with a call from one of us, schedule a demo, price a fleet, and keep the
+          site running. We do not send automated texts. We do not sell it. This
           site is for businesses; it is not directed at consumers or children.
         </p>
       </section>

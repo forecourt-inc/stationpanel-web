@@ -3,13 +3,24 @@ import path from "node:path";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { site } from "@/content/copy";
-import { demoFields, validateDemoRequest, type DemoRequest } from "@/lib/demo-request";
+import { addressLabels, detailFields, validateDemoRequest, type DemoRequest } from "@/lib/demo-request";
 import { clientKey, rateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
 function formatEmail(data: DemoRequest): string {
-  return demoFields.map((field) => `${field.label}: ${data[field.name] || "—"}`).join("\n");
+  const best = [data.time, data.days].filter(Boolean).join(", ");
+  return [
+    `${addressLabels[data.addressKind].label}: ${data.address}`,
+    `${data.contactKind === "email" ? "Email" : "Phone"}: ${data.contact}`,
+    `Best time: ${best || "—"}`,
+    ...detailFields.map((field) => `${field.label}: ${data[field.name] || "—"}`),
+  ].join("\n");
+}
+
+function subject(data: DemoRequest): string {
+  const who = data.company || data.name || data.address;
+  return `Demo request — ${who}${data.sites ? ` (${data.sites} sites)` : ""}`;
 }
 
 // No email provider (or it failed), in development only: keep the request in ./data.
@@ -61,8 +72,9 @@ export async function POST(request: Request) {
       const { error } = await resend.emails.send({
         from: process.env.DEMO_FROM_EMAIL || `Station Panel <${site.email}>`,
         to,
-        replyTo: data.email,
-        subject: `Demo request — ${data.company} (${data.sites} sites)`,
+        // Reply goes to the visitor when they gave an email. A phone number is in the body for a call back.
+        replyTo: data.contactKind === "email" ? data.contact : undefined,
+        subject: subject(data),
         text: formatEmail(data),
       });
       if (!error) return NextResponse.json({ ok: true });

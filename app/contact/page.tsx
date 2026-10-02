@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AlbanyMap } from "@/components/albany-map";
 import { DemoForm } from "@/components/demo-form";
 import { Container, PageHeader } from "@/components/ui";
 import { atgLine, contactPage, site } from "@/content/copy";
@@ -40,6 +41,12 @@ export default function ContactPage() {
                 </a>
               </p>
             </div>
+            <figure>
+              <div className="overflow-hidden rounded-xl border border-line">
+                <AlbanyMap />
+              </div>
+              <figcaption className="mt-2 text-sm text-muted">{contactPage.mapCaption}</figcaption>
+            </figure>
           </aside>
         </Container>
       </section>
