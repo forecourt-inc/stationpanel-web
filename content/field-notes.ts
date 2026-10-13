@@ -17,6 +17,19 @@ export const fieldNotesLabel = "Public reports, curated. Not Station Panel custo
 
 export const fieldNotes: FieldNote[] = [
   {
+    id: "2026-08-tennessee-walkthrough-log",
+    date: "2026-08-05",
+    operator: "One station · Tennessee",
+    headline: "State order cites missed walkthrough inspections, no inspection log, and untested leak detection",
+    summary:
+      "An enforcement update to Tennessee’s Underground Storage Tanks and Solid Waste Disposal Control Board lists an October 2025 order against one station. The violations included failure to perform periodic walkthrough inspections, failure to maintain a log of at least the last 12 months of visual inspections, failure to monitor tanks at least monthly, and failure to test release detection equipment at least annually. The order was appealed.",
+    impact:
+      "$86,800 in fees and penalties, under appeal. Across the quarter, the state issued 30 orders and assessed $385,840 in civil penalties.",
+    sourceName: "Tennessee Department of Environment and Conservation",
+    sourceUrl:
+      "https://www.tn.gov/content/dam/tn/environment/boards/documents/ust-swdcb/08-aug/ust-swdcb_rhonda-key_ust-enforcement-update_february-2026_edited_aug-05-2026_ua.pdf",
+  },
+  {
     id: "2026-06-minnesota-atg-broken",
     date: "2026-06-11",
     operator: "One station · Minnesota",
